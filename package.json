@@ -1,7 +1,8 @@
 {
-  "homepage": "https://github.com/Roco75/Coding-Ninjas-Bootcamp-React-Full-Stack-Development-Bootcamp-React-Group-3-Habit-tracker-React.git",
+  "homepage": "https://github.com/Roco75/Coding-Ninjas-Bootcamp-React-Full-Stack-Development-React-Group-3-Habit-tracker-React.git",
   "name": "habit-tracker",
   "version": "0.1.0",
+
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
@@ -43,6 +44,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babel-loader": "^9.2.1",
     "gh-pages": "^6.2.0"
   }
 }

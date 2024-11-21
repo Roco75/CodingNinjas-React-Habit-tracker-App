@@ -1,17 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HabitTracker from './components/HabitTracker';
+// App.js
+import React, { useState } from 'react';
+import HabitForm from './components/HabitForm'; // Ensure correct import path
+import HabitList from './components/HabitList'; // Ensure correct import path
 
-function App() {
+const App = () => {
+  const [showForm, setShowForm] = useState(false);
+
   return (
-    <Router basename="/Coding-Ninjas-Bootcamp-React-Full-Stack-Development-Bootcamp-React-Group-3-Habit-tracker-React">
-  <Routes>
-    <Route path="/" element={<HabitTracker />} />
-  </Routes>
-</Router>
+    <div className="App">
+      <h1>Habit Tracker</h1>
+      <button onClick={() => setShowForm(!showForm)}>
+        {showForm ? 'Cancel' : 'Add New Habit'}
+      </button>
+
+      {showForm && <HabitForm />}  {/* Conditionally render the HabitForm */}
+
+      <HabitList />
+    </div>
   );
 }
-
-
 
 export default App;

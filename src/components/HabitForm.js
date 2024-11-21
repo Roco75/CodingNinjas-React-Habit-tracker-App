@@ -1,6 +1,7 @@
+// HabitForm.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addHabit } from '../redux/reducers/habitReducer';
+import { addHabit } from '../redux/reducers/habitReducer'; // Ensure correct import path
 
 const HabitForm = () => {
   const [habitName, setHabitName] = useState('');
@@ -8,23 +9,25 @@ const HabitForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (habitName.trim()) {
-      dispatch(addHabit(habitName)); // Dispatch the addHabit action
+    if (habitName) {
+      dispatch(addHabit(habitName));  // Dispatch action to add habit
       setHabitName('');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={habitName}
-        onChange={(e) => setHabitName(e.target.value)}
-        placeholder="Enter a habit"
-        required
-      />
-      <button type="submit">Add Habit</button>
-    </form>
+    <div className="habit-form">
+      <h2>Add New Habit</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={habitName}
+          onChange={(e) => setHabitName(e.target.value)}
+          placeholder="Enter habit name"
+        />
+        <button type="submit">Add Habit</button>
+      </form>
+    </div>
   );
 };
 
