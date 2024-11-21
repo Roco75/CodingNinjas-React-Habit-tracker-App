@@ -1,0 +1,75 @@
+.habit-tracker-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .habit-tracker-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .days-header div {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .habit-container {
+    margin-bottom: 30px;
+  }
+  
+  .habit-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .habit-status-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  
+  .habit-status-button {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .habit-status-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .habit-status-button.done {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .habit-status-button.not-done {
+    background-color: #ff4d4f;
+    color: #fff;
+  }
+  
+  .habit-status-button.none {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+  

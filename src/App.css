@@ -1,137 +1,81 @@
 /* src/App.css */
-
-/* General styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f7f8;
-  color: #333;
   margin: 0;
-  padding: 20px;
-}
-
-.App {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-/* Header Styles */
-h1 {
-  text-align: center;
-  color: #4a90e2;
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
 h2 {
-  margin: 20px 0;
-  text-align: center;
+  color: #333;
 }
 
-/* Add Habit Styles */
-.add-habit {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.add-habit input {
-  padding: 10px;
-  font-size: 16px;
+button {
+  padding: 5px 10px;
+  margin: 5px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 60%;
+  border-radius: 5px;
 }
 
-.add-habit button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  margin-left: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+button:focus {
+  outline: none;
 }
 
-.add-habit button:hover {
-  background-color: #357ab8;
+.week button {
+  background-color: #f0f0f0;
+  width: 50px;
+  height: 50px;
+  font-size: 14px;
 }
 
-/* Habit List Styles */
-.habit-list {
-  margin-top: 20px;
-  border-top: 2px solid #4a90e2;
-  padding-top: 10px;
+.week {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.detailed-view {
+  padding: 20px;
 }
 
 .habit {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 15px;
-  margin: 10px 0;
-  background-color: #f9f9f9;
-  transition: box-shadow 0.3s;
-}
-
-.habit:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Habit Status Styles */
-.habit-status {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
-.habit-status div {
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
+.weekly-view {
+  padding: 20px;
+}
+
+.habit-weekly {
+  margin-bottom: 20px;
+}
+
+.week {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day-status {
   width: 13%;
   text-align: center;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 5px;
+  border: 1px solid #ddd;
 }
 
-/* Status Color Coding */
-.habit-status .Done {
-  background-color: #4caf50; /* Green */
-  color: white;
+.day-status.Done {
+  background-color: #d4edda;
+  color: #155724;
 }
 
-.habit-status .Not_done {
-  background-color: #f44336; /* Red */
-  color: white;
+.day-status['Not done'] {
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
-.habit-status .None {
-  background-color: #e0e0e0; /* Grey */
-  color: black;
-}
-
-.habit-status div:hover {
-  opacity: 0.8;
-}
-
-/* Responsive Styles */
-@media (max-width: 600px) {
-  .add-habit {
-    flex-direction: column;
-  }
-
-  .add-habit input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .add-habit button {
-    width: 100%;
-  }
-
-  .habit-status div {
-    font-size: 14px; /* Smaller font size on smaller screens */
-  }
+.day-status.None {
+  background-color: #fefefe;
+  color: #6c757d;
 }

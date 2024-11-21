@@ -1,20 +1,17 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HabitTracker from './components/HabitTracker';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <h1>Habit Tracker App</h1>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-        </Routes>
-      </div>
-    </Router>
+    <Router basename="/Coding-Ninjas-Bootcamp-React-Full-Stack-Development-Bootcamp-React-Group-3-Habit-tracker-React">
+  <Routes>
+    <Route path="/" element={<HabitTracker />} />
+  </Routes>
+</Router>
   );
 }
+
+
 
 export default App;

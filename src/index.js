@@ -1,12 +1,8 @@
-// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import store from './redux/store';  // Import your store
 import App from './App';
-import './index.css';
-import './App.css';
-
 
 ReactDOM.render(
   <Provider store={store}>

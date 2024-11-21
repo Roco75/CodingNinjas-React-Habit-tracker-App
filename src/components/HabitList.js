@@ -1,31 +1,53 @@
-// src/components/HabitList.js
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateHabit } from '../redux/habitSlice';
+import { updateHabitStatus } from '../redux/reducers/habitReducer';
+import './HabitList.css';
+
+const getLast7Days = () => {
+  const days = [];
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const today = new Date();
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date(today);
+    date.setDate(today.getDate() - i);
+    days.push(dayNames[date.getDay()]);
+  }
+  return days;
+};
 
 const HabitList = () => {
-  const habits = useSelector((state) => state.habits.items);
+  const habits = useSelector((state) => state.habits);
   const dispatch = useDispatch();
+  const days = getLast7Days();
 
-  const handleStatusChange = (id, dayIndex, currentStatus) => {
-    const nextStatus = currentStatus === 'Done' ? 'Not done' : currentStatus === 'Not done' ? 'None' : 'Done';
-    dispatch(updateHabit({ id, dayIndex, status: nextStatus }));
+  const toggleDone = (habitId, dayIndex, currentStatus) => {
+    const newStatus =
+      currentStatus === 'Done' ? 'Not done' : currentStatus === 'Not done' ? 'None' : 'Done';
+    dispatch(updateHabitStatus({ habitId, dayIndex, newStatus }));
   };
 
   return (
-    <div className="habit-list">
+    <div className="habit-tracker-container">
+      <h2>Your Habits</h2>
+      <div className="days-header">
+        {days.map((day, index) => (
+          <div key={index}>{day}</div>
+        ))}
+      </div>
       {habits.map((habit) => (
-        <div key={habit.id} className="habit">
-          <h3>{habit.name}</h3>
-          <div className="habit-status">
-            {habit.dailyStatus.map((status, index) => (
-              <div
+        <div key={habit.id} className="habit-container">
+          <div className="habit-title">{habit.name}</div>
+          <div className="habit-status-grid">
+            {habit.status.map((status, index) => (
+              <button
                 key={index}
-                className={`habit-status ${status}`}
-                onClick={() => handleStatusChange(habit.id, index, status)}
+                className={`habit-status-button ${
+                  status === 'Done' ? 'done' : status === 'Not done' ? 'not-done' : 'none'
+                }`}
+                onClick={() => toggleDone(habit.id, index, status)}
               >
-                Day {index + 1}: {status}
-              </div>
+                {status === 'Done' ? '✔️' : status === 'Not done' ? '❌' : 'Mark'}
+              </button>
             ))}
           </div>
         </div>
