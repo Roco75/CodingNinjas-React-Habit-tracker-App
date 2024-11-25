@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Roco75/CodingNinjas-React-Habit-tracker-App.git/static/css/main.bd08f4ad.css",
-    "main.js": "/Roco75/CodingNinjas-React-Habit-tracker-App.git/static/js/main.9475d613.js",
-    "index.html": "/Roco75/CodingNinjas-React-Habit-tracker-App.git/index.html",
-    "main.bd08f4ad.css.map": "/Roco75/CodingNinjas-React-Habit-tracker-App.git/static/css/main.bd08f4ad.css.map",
-    "main.9475d613.js.map": "/Roco75/CodingNinjas-React-Habit-tracker-App.git/static/js/main.9475d613.js.map"
+    "main.css": "/CodingNinjas-React-Habit-tracker-App/static/css/main.bd08f4ad.css",
+    "main.js": "/CodingNinjas-React-Habit-tracker-App/static/js/main.9475d613.js",
+    "index.html": "/CodingNinjas-React-Habit-tracker-App/index.html",
+    "main.bd08f4ad.css.map": "/CodingNinjas-React-Habit-tracker-App/static/css/main.bd08f4ad.css.map",
+    "main.9475d613.js.map": "/CodingNinjas-React-Habit-tracker-App/static/js/main.9475d613.js.map"
   },
   "entrypoints": [
     "static/css/main.bd08f4ad.css",
